@@ -73,6 +73,12 @@ var initDb = function(callback) {
   });
 };
 
+ //http://localhost:8080/api/mercado/hello
+app.use('/api/mercado', require('./routes/mercadolibre/mercado'));
+app.use('/api/pqtx', require('./routes/pqtx/pqtx'));
+app.use('/api/test', require('./routes/test/test')); 
+
+
 app.get('/', function (req, res) {
   // try to initialize the db on every request if it's not already
   // initialized.
